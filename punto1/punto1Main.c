@@ -8,5 +8,11 @@
 
 int main(){
 
+    char cadena[]={'a', 'b', 'c', '\0'};
+
+    invierte(cadena);
+
+    printf("Cadena invertida: \n\n");
+    puts(cadena);
     return 0;
 }
