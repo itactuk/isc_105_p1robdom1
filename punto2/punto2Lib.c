@@ -5,6 +5,7 @@
 #include "punto2Lib.h"
 
 
+
 /**
  * Suma dos numeros complejos.
  * Dado 3+4j y 2+3j debe de retornar 5+7j
@@ -13,6 +14,10 @@
  * @return
  */
 COMPLEJO suma(COMPLEJO a, COMPLEJO b){
+
+    COMPLEJO suma = {a.real+b.real,a.imaginaria+b.imaginaria};
+
+    return suma;
 }
 
 /**
@@ -24,6 +29,9 @@ COMPLEJO suma(COMPLEJO a, COMPLEJO b){
  */
 struct complejo resta(COMPLEJO a, COMPLEJO b){
 
+    COMPLEJO resta = {a.real-b.real,a.imaginaria-b.imaginaria};
+
+    return resta;
 }
 
 /**
@@ -37,6 +45,11 @@ struct complejo resta(COMPLEJO a, COMPLEJO b){
  */
 COMPLEJO multiplica(struct complejo a, struct complejo b){
 
+    COMPLEJO multiplicacion;
+    multiplicacion.real =(a.real*b.real)-(a.imaginaria*b.imaginaria);
+    multiplicacion.imaginaria = (a.real*b.imaginaria)+(b.real*a.imaginaria);
+
+    return multiplicacion;
 }
 
 /**
@@ -49,5 +62,12 @@ COMPLEJO multiplica(struct complejo a, struct complejo b){
  * @return
  */
 COMPLEJO divide(COMPLEJO a, COMPLEJO b){
+
+    COMPLEJO division;
+
+    division.real = ((a.real*b.real)+(a.imaginaria*b.imaginaria))/((b.real*b.real)+(b.imaginaria*b.imaginaria));
+    division.imaginaria = ((a.imaginaria*b.real)-(a.real*b.imaginaria))/((b.real*b.real)+(b.imaginaria*b.imaginaria));
+
+    return division;
 
 }
