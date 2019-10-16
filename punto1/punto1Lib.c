@@ -3,7 +3,7 @@
 //
 
 #include "punto1Lib.h"
-#include <stdio.h>
+#include <string.h>
 
 /**
  * Invierte una cadena.
@@ -12,14 +12,15 @@
  */
 void invierte (char cadena[]){
 
-    int n = sizeof(cadena);
-    int i,j = n-1;
+    int n = strlen(cadena);
+    int i,j;
     char aux;
-    for(i=0;i<j/2;i++){
-        aux = cadena[i];
+    for (i=0,j=n-1; i<n/2; i++,j--)
+    {
+        aux=cadena[i];
         cadena[i]=cadena[j];
         cadena[j]=aux;
-        j--
     }
+
     return;
 }
